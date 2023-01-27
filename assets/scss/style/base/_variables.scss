@@ -1,0 +1,76 @@
+// THEME AND COLOR
+$theme-primary: #ff9739;
+$theme-secondary: #000000;
+$theme-tertiary: #ae291f;
+$text-color:#57585d;
+$input-background:#eef1f8;
+$heading-color:#191D27;
+$p-tagcolor:#818181;
+$forgot-color:#515691;
+$white:#ffffff;
+$black:#000000;
+$color_1: #fff;
+$color_2: #717171;
+$background_color_1: #57a544;
+$background_color_2: #03a9f4;
+$background_color_3: #0288d1;
+$gray-base: #666666;
+$gray-darker: lighten($gray-base, 13.5%); // #222
+$gray-dark: lighten($gray-base, 20%); // #333
+$gray: lighten($gray-base, 33.5%); // #555
+$gray-light: lighten($gray-base, 46.7%); // #777
+$gray-lighter: lighten($gray-base, 93.5%); // #eee
+$twitter: #1da1f2;
+$facebook: #3b5998;
+$google-plus: #dd4b39;
+// PATH & FONT NAME
+$font: "poppins" !default;
+$imgpath: "../images/" !default;
+$font-path: "../fonts/" !default;
+$url: $imgpath !default;
+$icon-font-path: '../fonts/icons' !default;
+
+/**/
+
+// FONTS and TEXT STYLE
+$fontnormal: 16px !default;
+$fontsmall: 12px !default;
+$lineheight: 1.5 !default;
+$fontawesome: FontAwesome !default;
+$spacing: 5px !default;
+
+/**/
+
+//TRANSITION EFFECT
+$trasition_all: all 0.3s ease-in-out 0s !default;
+
+/**/
+
+// Display
+$ib: inline-block !default;
+$b: block !default;
+$t: table !default;
+$cell: table-cell !default;
+$n: none !default;
+
+/**/
+
+// Margin
+$auto: auto auto !default;
+$za: 0 auto !default;
+$ta: center;
+//placeholder for input using 
+@mixin placeholder {
+     ::-webkit-input-placeholder {
+        @content
+    }
+     :-moz-placeholder {
+        @content
+    }
+     ::-moz-placeholder {
+        @content
+    }
+     :-ms-input-placeholder {
+        @content
+    }
+}

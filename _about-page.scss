@@ -1,0 +1,303 @@
+/*--------------------------------------------------------------
+  # About us page 
+  --------------------------------------------------------------*/
+
+
+/* ------------------------------------
+    07. About Section CSS
+-------------------------------------*/
+
+.pl-0,
+.px-0 {
+    padding-left: 0!important;
+}
+
+.mt-100 {
+    margin-top: 100px !important;
+}
+
+@media only screen and (max-width: 991px) {
+    .md-mt-0 {
+        margin-top: 0px;
+    }
+}
+
+.box-shadow {
+    box-shadow: 2px 10px 50px rgb(158 158 158 / 25%);
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.col-20 [class*="col-"] {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.neuron-about .single-about {
+    padding: 40px 25px 25px;
+    background: #ffffff;
+    border-radius: 10px;
+    transition: all 0.5s ease 0s;
+    position: relative;
+}
+
+.neuron-about .single-about:before {
+    background: #FF8008;
+    background: -webkit-linear-gradient(to bottom, #FFC837, #FF8008);
+    background: linear-gradient(to bottom, #FFC837, #FF8008);
+    opacity: 0;
+    content: "";
+    height: 100%;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    transition: all 0.7s ease 0s;
+    border-radius: 5px;
+}
+
+.neuron-about .single-about .about-icon {
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.7s ease 0s;
+}
+
+.neuron-about .single-about .about-icon i:before {
+    margin: 0;
+    font-size: 70px;
+    line-height: 1;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0);
+    background-image: linear-gradient(0deg, #FFC837, #FF8008);
+    transition: all 0.7s ease 0s;
+}
+
+.neuron-about .single-about .about-title {
+    position: relative;
+    z-index: 1;
+    transition: all 0.7s ease 0s;
+}
+
+.neuron-about .single-about .about-title .title {
+    font-size: 22px;
+    font-weight: 600;
+    transition: all 0.7s ease 0s;
+}
+
+.neuron-about .single-about .about-desc {
+    position: relative;
+    z-index: 1;
+    transition: all 0.7s ease 0s;
+}
+
+.neuron-about .single-about .about-desc .desc-txt {
+    margin: 0;
+    transition: all 0.7s ease 0s;
+}
+
+.neuron-about .single-about.top-border:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 8px;
+    width: 70px;
+    background: linear-gradient(-150deg, #12b4c8, #6669e6);
+    transition: all 0.7s ease 0s;
+}
+
+.neuron-about .single-about:hover:before {
+    opacity: 1;
+}
+
+.neuron-about .single-about:hover i:before {
+    color: #ffffff;
+}
+
+.neuron-about .single-about:hover .title,
+.neuron-about .single-about:hover .desc-txt {
+    color: #ffffff;
+}
+
+.neuron-about .neuron-about-img-part {
+    display: inline-flex;
+}
+
+.neuron-about .neuron-about-img-part .about-img img {
+    border-radius: 5px;
+}
+
+.neuron-about.about-bg {
+    background: url(images/bg/about-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.about-inner .content-wrap .signature .title p {
+    display: inline-block;
+    font-size: 13px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.about-inner .content-wrap .signature .title p:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #01a0f9;
+    opacity: 0.3;
+}
+
+.about-inner .content-wrap .signature img {
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+/*soft*/
+
+.software-demo-bg {
+    background: url(#{$imgpath}/software-demo-bg.png) no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.neuron-about-video.soft-demo .soft-desc {
+    max-width: 80%;
+}
+
+
+/*career page*/
+
+
+/* ----------------------------------------------------------------
+    [ 08 Start Counter ]
+-----------------------------------------------------------------*/
+
+.single_counter {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    padding: 30px 0;
+    position: relative;
+    border: 1px solid transparent;
+    transition: all 0.3s ease 0s;
+}
+
+.single_counter .co-inner {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    color: #a1a3a3;
+    transform: translateY(-50%);
+    font-size: 70px;
+    opacity: .1;
+    -webkit-text-stroke-width: medium;
+}
+
+.single_counter:hover {
+    background: #fff;
+    border: 1px solid #000;
+}
+
+.single_counter .icon {
+    margin-bottom: 20px;
+}
+
+.single_counter .icon i {
+    font-size: 50px;
+    color: #000;
+}
+
+.single_counter span {
+    font-size: 40px;
+    font-weight: bold;
+    color: $theme-primary;
+}
+
+.single_counter p {
+    font-size: 16px;
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.counter-v2 h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.counter-v2 .facts-wrapper {
+    padding: 30px 25px
+}
+
+.counter-v2 .single_counter {
+    position: relative;
+    padding: 10px 0px;
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid #eee
+}
+
+.counter-v2 .single_counter .icon {
+    top: 30px;
+    margin-bottom: 0;
+    position: absolute;
+}
+
+.counter-v2 .single_counter:hover {
+    border: none;
+    padding-left: 30px
+}
+
+.counter-v2 .single_counter .counter-desc {
+    padding-left: 80px
+}
+
+.counter-v2 .single_counter .icon i {
+    color: $theme-primary
+}
+
+@media (min-width: 993px) {
+    .counter-v2 .facts-wrapper {
+        position: relative;
+        margin-top: -200px;
+        background: #fff;
+    }
+}
+
+.has-before {
+    position: relative;
+    padding-left: 90px;
+}
+
+.blue {
+    color: $theme-primary !important;
+}
+
+.has-before:before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: $theme-primary;
+}
+
+
+/* ----------------------------------------------------------------
+    [ End Counter ]
+-----------------------------------------------------------------*/

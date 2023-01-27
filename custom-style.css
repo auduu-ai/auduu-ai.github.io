@@ -1,0 +1,414 @@
+
+
+.highl_txt {
+    font-weight: 600;
+}
+
+.faq-section {
+    background: #fafdff;
+}
+
+.faq-section .accordion.indicator-plus-before.round-indicator .card-header.collapsed:before {
+    content: "\e94a";
+    color: #000;
+}
+
+.faq-section .accordion.indicator-plus-before .card-header.collapsed:before {
+    content: "\e94a";
+}
+
+.faq-section .accordion.indicator-plus-before.round-indicator .card-header:before {
+    font-family: 'icomoon';
+    font-size: 14px;
+    content: "\e902";
+    right: 16px;
+    position: absolute;
+    font-weight: bold;
+}
+
+.faq-section .accordion.indicator-plus-before .card-header:before {
+    font-family: 'icomoon';
+    content: "\f068";
+    float: left;
+}
+
+.faq-heading h2 {
+    font-size: 24px;
+    line-height: 42px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #111111;
+    margin-top: -9px;
+    position: relative;
+}
+
+.faq-heading h2 span {
+    position: relative;
+}
+
+.faq-heading h2 span:after {
+    content: "";
+    width: 100%;
+    max-width: 100%;
+    height: 5px;
+    background: #ffc107;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    margin: auto;
+}
+
+.disclosure-heading h2 {
+    font-size: 30px;
+    line-height: 42px;
+    font-weight: 700;
+    margin-bottom: 48px;
+    color: #111111;
+    margin-top: -9px;
+    position: relative;
+}
+
+.disclosure-heading h2 span {
+    position: relative;
+}
+
+.disclosure-heading h2 span:after {
+    content: "";
+    width: 100%;
+    max-width: 100%;
+    height: 5px;
+    background: #ffc107;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    margin: auto;
+}
+
+.fees-heading h2 {
+    font-size: 42px;
+    line-height: 42px;
+    font-weight: 700;
+    margin-bottom: 43px;
+    color: #111111;
+    margin-top: 0;
+    position: relative;
+}
+
+.tab-content {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.tab-content .card-header {
+    padding: 13px 16px;
+}
+
+.tab-content .card-body p {
+    margin-bottom: 10px;
+}
+
+.faq-nav .nav-link {
+    font-size: 15px;
+    font-family: "CircularStd-Book";
+}
+
+.f-right {
+    float: right;
+    margin-top: 4px;
+}
+
+ul.custom-list-style {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.custom-list-style li {
+    list-style-type: none;
+    display: block;
+    color: #616161;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: -4px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-family: "CircularStd-Book";
+}
+
+.custom-list-style li::before {
+    content: '';
+    height: 5px;
+    width: 5px;
+    background: #666;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 7px;
+}
+
+.imp-note h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ol.note-list {
+    padding-left: 18px;
+    margin-bottom: 30px;
+}
+
+.note-list li {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.disclosures-page .recogn-approval-sec .other-message-area {
+    position: relative;
+}
+
+.disclosures-page .recogn-approval-sec .other-message-area .about-disc-box {
+    margin-top: 0px;
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    min-height: 405px;
+    margin-bottom: 0px;
+}
+
+.disclosures-page .about-disc-box {
+    background: #fff;
+    border-radius: 40px 0 40px 0;
+    padding: 20px 20px 5px;
+    position: relative;
+}
+
+.disclosures-page .recogn-approval-sec .other-message-area .about-disc-box::after {
+    background: #dedede;
+}
+
+.disclosures-page .about-disc-box::after {
+    content: '';
+    background: #d22326;
+    position: absolute;
+    bottom: -7px;
+    right: -7px;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+    border-radius: 40px 0 0 0;
+}
+
+.disc-img img {
+    width: 130px;
+    margin-bottom: 4px;
+}
+
+.disc-text h3 {
+    font-family: "CircularStd-Book";
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    color: #d92326;
+}
+
+.disc-text p {
+    font-style: italic;
+}
+
+.Subject__listBox1 {
+    margin-top: 30px;
+}
+
+.other-txt {
+    margin-top: 18px;
+}
+
+.other-txt h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.other-txt h2 span {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+section.disclosure__page {
+    padding: 70px 0px;
+}
+
+.link-txt {
+    margin-top: -10px;
+    font-weight: bold;
+}
+
+ul.fees-note-list {
+    padding-left: 16px;
+    margin-bottom: 40px;
+    margin-top: -15px;
+}
+
+.fees-note-list li {
+    font-size: 11px;
+}
+
+.footer-section .footer .footer-links {
+    padding: 0px 15px 0 15px !important;
+}
+
+.footer-section .footer .footer-links .footer-images {
+    text-align: left !important;
+}
+
+.footer-section .footer-copyright .links ul li a {
+	padding: 10px !important;
+}
+
+
+.outstation-admission-offices {
+    margin: 30px 0 0;
+    position: relative;
+    width: 100%;
+}
+.select-state {
+    background: #f5f5f5;
+    border-top: 1px solid #eeefef;
+    padding: 50px 0;
+    text-align: center;
+}
+.outstation-admission-offices h2 {
+    text-align: center;
+    color: #333;
+    font-size: 42px;
+    text-transform: uppercase;
+}
+.select-state p {
+    color: #333;
+    font-size: 21px;
+    font-weight: 600;
+}
+.section-input {
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+    padding: 12px 20px;
+    width: 40%;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #8d8d8d;
+}
+.outstation-admission-offices .box {
+    display: none;
+    position: relative;
+}
+.outstation-admission-offices .image-section {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.bg-green {
+    background-color: #00c775;
+}
+.bg-red {
+    background: #d83135!important;
+}
+.bg-yellow {
+    background-color: #f1b444;
+}
+.bg-dark-yellow {
+    background-color: #fbc300;
+}
+.bg-violet {
+    background-color: #835dbe;
+}
+.bg-dark-green {
+    background-color: #44c200;
+}
+.bg-blue {
+    background: #0392ce!important;
+}
+.outstation-admission-offices .image-section > div {
+    background-attachment: fixed;
+    height: 100%;
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+}
+.outstation-ao-main {
+    padding: 60px 0;
+    position: relative;
+    width: 100%;
+}
+.ct-contact1 {
+    margin: 0 0 30px 0;
+    border: solid 1px rgba(230, 241, 242, 0.3);
+    padding: 15px;
+    background-color: rgba(242, 253, 255, 0.9);
+    border-radius: 4px;
+    min-height: 250px;
+}
+.outstation-admission-offices h4 {
+    color: #333;
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.cu-address p {
+    position: relative;
+    padding-bottom: 4px;
+    padding-left: 24px;
+}
+ul.list-contact {
+    margin-top: 15px;
+}
+ul.list-contact li {
+    vertical-align: middle;
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+ul.list-contact li strong {
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+    section.disclosure__page {
+        padding: 48px 0px 20px;
+    }
+    .disclosures-page .recogn-approval-sec .other-message-area .about-disc-box {
+        margin-bottom: 30px;
+    }
+    .disclosure-heading h2 {
+        font-size: 24px;
+        margin-bottom: 36px;
+    }
+    .fees-heading h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+}
+
+.dashboard-test-sec {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.side-navigation {
+    overflow: auto;
+}
+@media only screen and (max-width: 1199px){
+   .side-navigation {
+        left: -290px !important;
+    }
+}
+
+
+.side-navigation.swap {
+    left: 0!important;
+    z-index: 10;
+}

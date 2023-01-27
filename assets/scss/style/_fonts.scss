@@ -1,0 +1,7 @@
+//OpenSans Fonts
+@include font-face($font, "#{$font-path}/poppinslight", 300, normal);
+@include font-face($font, "#{$font-path}/poppinsregular", 400, normal);
+@include font-face($font, "#{$font-path}/poppinssemibold", 500, normal);
+@include font-face($font, "#{$font-path}/poppinsmedium", 600, normal);
+@include font-face($font, "#{$font-path}/poppinsbold", 700, normal);
+//CircularStd fonts

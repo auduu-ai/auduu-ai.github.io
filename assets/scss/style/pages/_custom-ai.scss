@@ -1,0 +1,365 @@
+/*custom ai page section css here */
+
+
+/*shapes css animation*/
+
+.shape-img1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: -1;
+    opacity: .40;
+}
+
+.shape-img2 {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    z-index: -1;
+    animation-name: rotateMe;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.shape-img7 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: .20;
+    animation: rotate3d 4s linear infinite;
+}
+
+.shape-img3 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    opacity: .10;
+    animation: rotate3d 4s linear infinite;
+}
+
+.shape-img4 {
+    position: absolute;
+    right: 40%;
+    bottom: 8%;
+    z-index: -1;
+    animation: animationFramesOne 20s infinite linear;
+}
+
+.shape-img5 {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    opacity: 0.7;
+    animation-name: rotateMe;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.shape-img6 {
+    position: absolute;
+    left: 2%;
+    bottom: 0;
+    z-index: -1;
+    opacity: .40;
+    animation: moveLeftBounce 5s linear infinite;
+}
+
+.dot-shape1 {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    z-index: -1;
+    animation: animationFramesTwo 40s infinite linear;
+    opacity: 0.5;
+}
+
+.dot-shape2 {
+    position: absolute;
+    left: 5%;
+    top: 45%;
+    z-index: -1;
+    animation: animationFramesTwo 30s infinite linear;
+    opacity: 0.5;
+}
+
+.dot-shape4 {
+    position: absolute;
+    right: 15%;
+    top: 50%;
+    z-index: -1;
+    animation: rotate3d 4s linear infinite;
+}
+
+.dot-shape5 {
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    z-index: -1;
+    animation: animationFramesOne 20s infinite linear;
+}
+
+.dot-shape6 {
+    position: absolute;
+    right: 45%;
+    bottom: 5%;
+    z-index: -1;
+    animation: rotate3d 4s linear infinite;
+}
+
+@keyframes moveBounce {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes rotateMe {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate3d {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes animationFramesOne {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    20% {
+        transform: translate(-73px, 1px) rotate(-36deg);
+    }
+    40% {
+        transform: translate(-141px, -72px) rotate(-72deg);
+    }
+    60% {
+        transform: translate(-83px, -122px) rotate(-108deg);
+    }
+    80% {
+        transform: translate(40px, -72px) rotate(-144deg);
+    }
+    100% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@keyframes moveLeftBounce {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes animationFramesTwo {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    20% {
+        transform: translate(73px, -1px) rotate(36deg);
+    }
+    40% {
+        transform: translate(141px, 72px) rotate(72deg);
+    }
+    60% {
+        transform: translate(83px, 122px) rotate(108deg);
+    }
+    80% {
+        transform: translate(-40px, 72px) rotate(144deg);
+    }
+    100% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+
+/*custom ai page how we are work section css here*/
+
+
+/** service-section **/
+
+.service-section {
+    position: relative;
+    padding: 40px 0px 70px 0px;
+}
+
+.service-block-one .inner-box {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    padding: 46px 20px 54px 20px;
+    border-radius: 5px;
+    transition: all 900ms ease;
+}
+
+.service-block-one .inner-box:hover {
+    box-shadow: 0px 20px 30px rgba(251, 81, 85, 0.23);
+}
+
+.service-block-one .inner-box:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0%;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    border-radius: 5px;
+    transition: all 500ms ease;
+    z-index: -1;
+}
+
+.service-block-one .inner-box:hover:before {
+    height: 100%;
+    top: 0px;
+}
+
+.service-block-one .inner-box h4 {
+    margin-bottom: 30px;
+}
+
+.service-block-one .inner-box h4 a {
+    color: $theme-secondary;
+}
+
+.service-block-one .inner-box .icon-box {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 33px;
+}
+
+.service-block-one .inner-box .icon-box i {
+    position: relative;
+    display: inline-block;
+    font-size: 50px;
+    background: #fff;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    transition: all 500ms ease;
+}
+
+.service-block-one .inner-box:hover .icon-box i {
+    box-shadow: none;
+}
+
+.service-block-one .inner-box .icon-box .border-layer {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: -10px;
+    top: -10px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%, 0 0);
+    transition: all 500ms ease;
+    -webkit-animation: service_hexagon 2s infinite linear;
+    -moz-animation: service_hexagon 2s infinite linear;
+    -o-animation: service_hexagon 2s infinite linear;
+    animation: service_hexagon 2s infinite linear;
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+.service-block-one .inner-box:hover .icon-box .border-layer {
+    -webkit-animation-play-state: running;
+    -moz-animation-play-state: running;
+    -o-animation-play-state: running;
+    animation-play-state: running;
+}
+
+.service-block-one .inner-box:hover .border-layer {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0 0);
+}
+
+.service-block-one .inner-box .icon-box .border-layer:before {
+    position: absolute;
+    content: '';
+    background: #fff;
+    width: 8px;
+    height: 8px;
+    left: 15px;
+    bottom: 9px;
+    border-radius: 50%;
+}
+
+.service-block-one .inner-box p {
+    color: #666;
+}
+
+.service-block-one .inner-box:hover h4,
+.service-block-one .inner-box:hover h4 a,
+.service-block-one .inner-box:hover p {
+    color: #fff;
+}
+
+.service-section .sec-title {
+    margin-bottom: 10px;
+}
+
+.service-section .pattern-layer {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 1525px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.service-block-one .inner-box:before {
+    background: -webkit-linear-gradient( -30deg, #fb5155, #f92a75 100%);
+}
+
+.service-block-one .inner-box:hover h4,
+.service-block-one .inner-box:hover h4 a,
+.service-block-one .inner-box:hover p {
+    color: #fff;
+}
+
+
+/*tabs_Sestion css here*/
+
+.tabs_Sestion {
+    .nav-pills {
+        .nav-item {
+            a {
+                @include padding(10);
+                &.active {
+                    background: $theme-primary;
+                }
+            }
+        }
+    }
+}

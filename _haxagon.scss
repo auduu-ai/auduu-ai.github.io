@@ -1,0 +1,392 @@
+@import "../lib";
+
+// Rounded Haxagon Mixin
+// @include rounded-hexagon();
+// @include rounded-hexagon(30px, 5px, #000, 12px, #fff);
+@mixin rounded-hexagon($hexagon-height, $hexagon-radius, $hexagon-bg-color, $hexagon-font-size, $hexagon-color) {
+    margin: 0;
+    color: $hexagon-color;
+    background: $hexagon-bg-color;
+    height: calc((#{$hexagon-height}  * 1.414213562373095) - (((#{$hexagon-radius} * 2) * 1.414213562373095) - (#{$hexagon-radius} * 2)));
+    line-height: calc((#{$hexagon-height}  * 1.414213562373095) - (((#{$hexagon-radius} * 2) * 1.414213562373095) - (#{$hexagon-radius} * 2)));
+    position: absolute;
+    top: calc( 50% - (((#{$hexagon-height}  * 1.414213562373095) - (((#{$hexagon-radius} * 2) * 1.414213562373095) - (#{$hexagon-radius} * 2))) / 2));
+    left: 50%;
+    margin-left: -9em;
+    min-width: 18em;
+    width: $hexagon-height;
+    text-align: center;
+    font-size: $hexagon-font-size;
+
+    &:after, &:before {
+        content: " ";
+        transform: rotate(45deg);
+        transform-origin: 0px 0px;
+        background-color: $hexagon-bg-color;
+        width: $hexagon-height;
+        height: $hexagon-height;
+        top: calc(((#{$hexagon-radius} * 1.414213562373095) - #{$hexagon-radius}) * -1);
+        left: 0px;
+        position: absolute;
+        border-radius: #{$hexagon-radius};
+        z-index: -1;
+    }
+
+    &:before {
+        left: 100%;
+    }
+}
+
+// HAXAGON WITH USING CALC CSS
+//@include hexagon; This haxagon for using default value by default flat-left will activate;
+//@include hexagon(50px, #000, 12px, #fff, 1px solid #fff, 'true/false');  if you added color, bg or differents size of haxagon = if true than flat top will show = else flat left haxagon will show
+@mixin hexagon($hexagon-height: 35px, $hexagon-bg-color: transparent, $hexagon-font-size: 16px, $hexagon-color: #fff, $border: none, $flat-top: "false") {
+    height: $hexagon-height;
+    width: $hexagon-height;
+    position: relative;
+    display: inline-block;
+    color: $hexagon-color;
+    text-align: center;
+
+    @if $flat-top == "true" {
+        margin-left: calc(#{$hexagon-height}  / 2.6);
+
+        //margin-right: calc(#{$hexagon-height}  / 2.5);
+        .hexagon {
+            height: 100%;
+            width: calc(100% * 0.57735);
+            display: block;
+            background-color: $hexagon-bg-color;
+            line-height: $hexagon-height;
+            border-top: $border;
+            border-bottom: $border;
+
+            &:after, &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: calc((100% / 2) - ((100% * 0.57735) / 2));
+                background-color: inherit;
+                height: inherit;
+                width: inherit;
+                border-top: $border;
+                border-bottom: $border;
+            }
+
+            &:before {
+                @include rotateZ(60deg);
+            }
+
+            &:after {
+                @include rotateZ(-60deg);
+            }
+        }
+    }
+    @else {
+        margin-top: calc(#{$hexagon-height}  / 2.6);
+
+        .hexagon {
+            height: calc(100% * 0.57735);
+            width: 100%;
+            display: block;
+            background-color: $hexagon-bg-color;
+            line-height: calc(100% * 0.57735);
+            border-left: $border;
+            border-right: $border;
+
+            &:after, &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: calc((100% / 2) - ((100% * 0.57735) / 2));
+                background-color: inherit;
+                height: inherit;
+                width: inherit;
+                border-left: $border;
+                border-right: $border;
+            }
+
+            &:before {
+                @include rotateZ(120deg);
+            }
+
+            &:after {
+                @include rotateZ(-120deg);
+            }
+        }
+    }
+}
+
+// Image in background of Haxagon
+// try passing different sizes and background images to the mixin
+// @include Image-hexagon();
+// @include Image-hexagon(150px, url(http://placekitten.com/g/250));
+@mixin Image-hexagon($size: 300px, $background: url(), $shadow: 0 0 20px rgba(0, 0, 0, 0.8), $borderWidth: 3px) {
+    $scaleFactor: tan(30deg);
+
+    /*this smushes a square into a 60deg/120deg rhombus*/
+    $inverseScale: 1 / $scaleFactor;
+    $sideLength: $size / sqrt(3);
+    $totalHeight: $sideLength + $size;
+    $boxShadow: $shadow;
+    $scaledBorderWidth: $borderWidth / $scaleFactor;
+    $border: solid #{$borderWidth} #fff;
+    $scaledBorder: solid #{$scaledBorderWidth} #fff;
+
+    position: relative;
+    width: $size;
+    height: $sideLength;
+    margin-top: $size / 3;
+    margin-bottom: $size / 3;
+    background: $background;
+    background-size: $totalHeight auto;
+    background-position: center center;
+    box-shadow: $boxShadow;
+    border-left: $border;
+    border-right: $border;
+
+    .hex1,
+    .hex2 {
+        position: absolute;
+        overflow: hidden;
+        width: $size / sqrt(2);
+        height: $size / sqrt(2);
+        left: $sideLength / 4 - $borderWidth + 1px;
+
+        /*for some reason this 1px correction is needed */
+        background: inherit;
+        box-shadow: $boxShadow;
+
+        @include transform(scaleY(#{$scaleFactor}) rotate(-45deg));
+
+        &:after {
+            /*counter rotate and un-scale the bg image*/
+            content: "";
+            position: absolute;
+            left: -($sideLength / 4 + 1px);
+
+            /*same correction as up above */
+            width: $size;
+            height: $size / sqrt(2);
+            top: 0;
+            background: inherit;
+
+            @include transform(rotate(45deg) scaleY(#{$inverseScale}));
+        }
+    }
+
+    .hex1 {
+        top: -$size / sqrt(2) / 2;
+        border-top: $scaledBorder;
+        border-right: $scaledBorder;
+
+        &:after {
+            background-position: center 17%;
+            margin-top: -$scaledBorderWidth;
+        }
+    }
+
+    .hex2 {
+        bottom: -$size / sqrt(2) / 2;
+        border-left: $scaledBorder;
+        border-bottom: $scaledBorder;
+
+        &:after {
+            background-position: center 83%;
+            margin-left: -$scaledBorderWidth + 1px;
+
+            /*that pesky single pixel correction again*/
+        }
+    }
+
+    /*cover up the box shadows */
+    &:after {
+        content: "";
+        position: absolute;
+        top: $borderWidth / sqrt(2);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: $sideLength - 2 * $borderWidth / sqrt(2);
+        background: inherit;
+    }
+}
+
+// Image Inside Haxagon
+// try passing different sizes and background images to the mixin
+// @include image-hexa();
+// @include image-hexa(135px, hidden, 0 auto);
+@mixin image-hexa($width: 135px, $overflow: hidden, $margin: 0 auto) {
+    @include transform-origin(50%);
+
+    width: $width;
+    height: $width - 20px;
+    overflow: $overflow;
+
+    @include rotate(120deg);
+
+    div {
+        @include transform-origin(50%);
+
+        overflow: $overflow;
+        margin: $margin;
+        height: 100%;
+        width: 100%;
+    }
+
+    .hex1,
+    .hex2 {
+        @include rotate(-60deg);
+    }
+}
+
+// Makes a CSS hexagon! based off of http://csshexagon.com/
+// Demo: http://sassmeister.com/gist/98fcf3ce163a97d2ef7e
+@mixin hexagon2($size, $color, $border: 0) {
+    position: relative;
+    width: $size;
+    height: $size * 0.577;
+    background-color: $color;
+    margin: ($size * 0.288) 0;
+    border-left: $border;
+    border-right: $border;
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+
+        @if $border == 0 {
+            width: 0;
+            left: 0;
+            border-left: ($size / 2) solid transparent;
+            border-right: ($size / 2) solid transparent;
+        }
+        @else {
+            z-index: 1;
+            width: $size * 0.707;
+            height: $size * 0.707;
+            -webkit-transform: scaleY(0.5774) rotate(-45deg);
+            -ms-transform: scaleY(0.5774) rotate(-45deg);
+            transform: scaleY(0.5774) rotate(-45deg);
+            background-color: inherit;
+            left: $size * 0.129;
+        }
+    }
+
+    &:before {
+        @if $border == 0 {
+            bottom: 100%;
+            border-bottom: ($size * 0.288) solid $color;
+        }
+        @else {
+            top: -($size * 0.353);
+            border-top: $border;
+            border-right: $border;
+        }
+    }
+
+    &:after {
+        @if $border == 0 {
+            top: 100%;
+            width: 0;
+            border-top: ($size * 0.288) solid $color;
+        }
+        @else {
+            bottom: -($size * 0.353);
+            border-bottom: $border;
+            border-left: $border;
+        }
+    }
+}
+
+// Creating Haxagon Grid System
+// number of elements in DOM ($n + 1)*($n + 2)
+$number: 7 !default;
+$transition-duration: 0.7s !default;
+
+//$n-total: ($n + 1) * ($n + 2) !default;
+//- $diag-small: 182px;
+
+@mixin haxagon-grid($diag-small, $haxagon-background: transparent) {
+    $diag-large: $diag-small / sin(60deg) !default;
+    $dif: ($diag-large - $diag-small) / 2 !default;
+
+    float: left;
+    position: relative;
+    z-index: 1;
+    margin: (-$diag-large / 8) 0;
+    width: $diag-small;
+    height: $diag-large;
+    transform-style: preserve-3d;
+    transition: transform $transition-duration, z-index 0s $transition-duration;
+    pointer-events: none;
+
+    &:nth-child(#{$number}n + 1) {
+        clear: left;
+        margin-left: $diag-small / 2;
+    }
+
+    &--upfront {
+        z-index: 2;
+        transform: scale(1.25) perspective(40em) translateZ($diag-small / 2);
+        transition: transform $transition-duration;
+
+        &.item--rotated {
+            transform: scale(1.25) perspective(40em) translateZ($diag-small / 2) rotateY(180deg);
+        }
+    }
+
+    &__face {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -$diag-large / 2;
+        width: $diag-large;
+        height: $diag-large;
+        backface-visibility: hidden;
+
+        &--front {
+            transform: scale(0.95);
+        }
+
+        &--back {
+            transform: scale(0.95) rotateY(180deg);
+        }
+    }
+
+    .hexagon {
+        $rhombus-angle: 60deg;
+        $rot-angle: -$rhombus-angle / 2;
+        $skew-angle: 90deg - $rhombus-angle;
+        $scale-factor: cos($skew-angle);
+
+        overflow: hidden;
+        width: $diag-large;
+        height: $diag-large;
+        transform: rotate($rot-angle) skewX($skew-angle) scaleY($scale-factor);
+
+        &__content {
+            margin-left: ($diag-large - $diag-small) / 2;
+            width: $diag-small;
+            height: $diag-large;
+            transform: scaleY(1 / $scale-factor) skewX(-$skew-angle) rotate(-$rot-angle);
+            text-align: center;
+            cursor: pointer;
+            pointer-events: auto;
+            background-color: $haxagon-background;
+
+            // IF you Using Background image use can uncomment it and use background like this
+            // .item__face--front & {
+            //     background: linear-gradient(rgba(white, 0.32), rgba(white, 0.32)), url($front-img) 50% (50% / cover);
+            // }
+
+            // .item__face--back & {
+            //     background: linear-gradient(rgba(white, 0.32), rgba(white, 0.32)), url($back-img) 50% (50% / cover);
+            // }
+       
+        }
+    }
+}

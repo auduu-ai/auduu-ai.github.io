@@ -1,0 +1,55 @@
+// VARIABLES FOR FONTS
+$font: "poppins" !default;
+$font-path: "../fonts/" !default;
+@mixin font-face($font, $font-path, $font-weight, $font-style) {
+    @font-face {
+        font-family: $font;
+        src: url("#{$font-path}.eot");
+        src: url("#{$font-path}.eot?#iefix") format("embedded-opentype"),
+        url("#{$font-path}.woff") format("woff"),
+        url("#{$font-path}.ttf") format("truetype"),
+        url("#{$font-path}.svg##{$font}") format("svg");
+        font-weight: $font-weight;
+        font-style: $font-style;
+    }
+    //Chrome for Windows rendering fix: http://www.adtrak.co.uk/blog/font-face-chrome-rendering/
+    @media screen and (-webkit-min-device-pixel-ratio: 0) {
+        @font-face {
+            font-family: $font;
+            src: url("#{$font-path}.svg##{$font}") format("svg");
+        }
+    }
+}
+
+
+/*---Opensans fonts--*/
+
+@mixin poppins {
+    font-family: '$font', arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+@mixin poppins {
+    font-family: '$font', arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin poppins {
+    font-family: '$font', arial, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@mixin poppins {
+    font-family: '$font', arial, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+@mixin poppins {
+    font-family: '$font', arial, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}

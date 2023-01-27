@@ -1,0 +1,323 @@
+/*case stdies page css here */
+
+
+/** case-section **/
+
+.case-section {
+    position: relative;
+}
+
+.case-section .inner-container {
+    position: relative;
+    padding-bottom: 125px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.case-block {
+    margin-bottom: 20px;
+}
+
+.case-block-one .inner-box {
+    position: relative;
+    display: block;
+    background: #fff;
+    padding: 20px 0px;
+    border-radius: 5px;
+    box-shadow: 0 0px 30px rgba(0, 0, 0, 0.1);
+    transition: all 500ms ease;
+}
+
+.case-block-one .inner-box:hover {
+    box-shadow: 0 20px 50px #fdb8ba;
+    transform: translateY(-10px);
+}
+
+.case-block-one .inner-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.case-block-one .inner-box:hover:before {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, .37, .66);
+    transition-timing-function: cubic-bezier(0.52, 1.64, .37, .66);
+}
+
+.case-block-one .inner-box:before {
+    background: #FF8008;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #FFC837, #FF8008);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #FFC837, #FF8008);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.case-block-one .inner-box .image-box {
+    position: relative;
+    display: block;
+}
+
+.case-block-one .inner-box .image-box img {
+    width: 100%;
+}
+
+.case-block-one .inner-box .lower-content {
+    padding: 8px 25px 1px 25px;
+}
+
+.case-block-one .inner-box .lower-content p {
+    display: block;
+    padding-bottom: 13px;
+    border-bottom: 1px solid #e3e2f2;
+    margin-bottom: 17px;
+    transition: all 500ms ease;
+}
+
+.case-block-one .inner-box:hover .lower-content p {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+.case-block-one .inner-box .lower-content h4 {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0px;
+    position: relative;
+}
+
+.case-block-one .inner-box .lower-content h4 a {
+    color: $black;
+}
+
+.case-block-one .inner-box:hover .lower-content h4,
+.case-block-one .inner-box:hover .lower-content h4 a {
+    color: #fff;
+}
+
+.case-section .more-btn {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin-top: 43px;
+}
+
+.case-section .sec-title {
+    margin-bottom: 60px;
+}
+
+
+/*press release page section css here*/
+
+figure.snip1253 {
+    font-family: $font;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: left;
+    font-size: 16px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+}
+
+figure.snip1253 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+figure.snip1253 .image {
+    max-height: 220px;
+    overflow: hidden;
+    width: 100%;
+    transition: all 500ms ease;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+figure.snip1253 img {
+    max-width: 100%;
+    vertical-align: top;
+    position: relative;
+}
+
+figure.snip1253 figcaption {
+    margin: -40px 15px 0;
+    padding: 15px;
+    position: relative;
+    background-color: #ffffff;
+}
+
+figure.snip1253 .date {
+    background: -webkit-linear-gradient(0deg, #d83371, #7a2d9e 100%);
+    top: 15px;
+    color: #fff;
+    left: 15px;
+    min-height: 48px;
+    min-width: 48px;
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+figure.snip1253 .date span {
+    display: block;
+    line-height: 24px;
+}
+
+figure.snip1253 .date .month {
+    font-size: 14px;
+}
+
+figure.snip1253 h3,
+figure.snip1253 p {
+    margin: 0;
+    padding: 0;
+}
+
+figure.snip1253 h3 {
+    min-height: 50px;
+    margin-bottom: 10px;
+    margin-left: 60px;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 20px;
+    color: $black;
+}
+
+figure.snip1253 h3 a {
+    color: $black;
+}
+
+figure.snip1253 h3 a:hover {
+    color: $theme-primary;
+}
+
+figure.snip1253 p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+figure.snip1253 footer {
+    padding: 10px 25px;
+    color: #000000;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    display: flex;
+}
+
+figure.snip1253 footer .link a {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    color: #040535;
+    font-weight: 500;
+    transition: all 500ms ease;
+}
+
+figure.snip1253 footer .link a i {
+    font-size: 20px;
+    line-height: 20px;
+    color: #dc316e;
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+figure.snip1253 footer .link i {
+    position: absolute;
+    left: 0px;
+    top: -4px;
+    opacity: 0;
+    transition: all 500ms ease;
+}
+
+figure.snip1253 footer .link a:hover {
+    padding-left: 22px;
+    color: #dc316e;
+}
+
+figure.snip1253 footer .link a:hover i {
+    opacity: 1;
+}
+
+// figure.snip1253 a {
+//     left: 0;
+//     right: 0;
+//     top: 0;
+//     bottom: 0;
+//     position: absolute;
+//     z-index: 1;
+// }
+figure.snip1253:hover img,
+figure.snip1253.hover img {
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+}
+
+
+/*events section css here*/
+
+.blog-home2 .on-hover {
+    -webkit-transition: 0.2s ease-in;
+    -o-transition: 0.2s ease-in;
+    transition: 0.2s ease-in;
+}
+
+.blog-home2 .on-hover:hover {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+
+.blog-home2 .date-pos {
+    right: 10px;
+    top: 10px;
+}
+
+.blog-home2 .on-hover a {
+    color: $theme-primary;
+}
+
+.blog-home2 .on-hover h5 a {
+    color: $theme-primary;
+}
+
+.blog-home2 .date-pos span {
+    font-size: 30px;
+    line-height: 30px;
+}
+
+.blog-home2 .bg-info-gradiant {
+    background: #FF8008;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #FFC837, #FF8008);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #FFC837, #FF8008);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

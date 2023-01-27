@@ -1,0 +1,17 @@
+@mixin box-shadow-n($top, $left, $blur, $color, $inset: 'false') {
+    @if $inset == 'true'{
+        -webkit-box-shadow:inset $top $left $blur $color;
+        -moz-box-shadow:inset $top $left $blur $color;
+        box-shadow:inset $top $left $blur $color;
+    } @else {
+        -webkit-box-shadow: $top $left $blur $color;
+        -moz-box-shadow: $top $left $blur $color;
+        box-shadow: $top $left $blur $color;
+    }
+}
+
+@mixin box-shadow-none($none:none) {
+    -webkit-box-shadow: $none;
+    -moz-box-shadow: $none;
+    box-shadow: $none;
+}

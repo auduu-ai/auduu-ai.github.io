@@ -1,0 +1,120 @@
+// HEIGHT & WIDTH
+@mixin height($pxval) {
+    height: $pxval + px;
+    height: rem($pxval)
+}
+@mixin min-height($pxval) {
+    min-height: $pxval + px;
+    min-height: rem($pxval)
+}
+@mixin max-height($pxval) {
+    max-height: $pxval + px;
+    max-height: rem($pxval)
+}
+@mixin width($pxval) {
+    width: $pxval + px;
+    width: rem($pxval)
+}
+@mixin min-width($pxval) {
+    min-width: $pxval + px;
+    min-width: rem($pxval)
+}
+@mixin max-width($pxval) {
+    max-width: $pxval + px;
+    max-width: rem($pxval)
+}
+
+@mixin width_auto($width_auto:auto, $width_inherit:inherit){
+    width: $width_inherit;
+    width: $width_auto;
+}
+
+@mixin max-width-auto($width_auto:auto, $width_inherit:inherit){
+    max-width: $width_inherit;
+    max-width: $width_auto;
+}
+
+@mixin min-width-auto($width_auto:auto, $width_inherit:inherit){
+    min-width: $width_inherit;
+    min-width: $width_auto;
+}
+
+@mixin height-auto($h_auto:auto, $h_inherit:inherit){
+    height: $h_inherit;
+    height: $h_auto;
+}
+
+@mixin min-height-auto($hauto: auto, $h_inherit:inherit){
+    min-height: $h_inherit;
+    min-height: $hauto;
+}
+
+@mixin square($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+// ASPECT RATIO
+// @include ratio(16, 9);
+@mixin ratio($width, $height) {
+    position: relative;
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+    > .ratioinner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+// @include fluid-ratio(4 3, iframe);
+// @include fluid-ratio(5 3, "&--fluid");
+@mixin fluid-ratio($ratio: 1 1, $selector: "> :first-child", $before: 'true') {
+    @if $before == 'false'{
+        $selector: unquote($selector);
+        position: relative;
+        padding-bottom: percentage(nth($ratio, 2) / nth($ratio, 1));
+        #{$selector} {
+            left: 0;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+    } @else{
+        $selector: unquote($selector);
+        position: relative;
+        &:before{
+            content: "";
+            padding-bottom: percentage(nth($ratio, 2) / nth($ratio, 1));
+            position: relative;
+            display: block;
+        }
+        #{$selector} {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto auto;
+        }
+    }
+}
+
+
+// Calc Mixins
+// @include calc( width, '100% - 2px')
+@mixin calc($property, $expression, $default :"") {
+
+    @if $default !="" {
+        #{$property}: #{$default};
+    }
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}

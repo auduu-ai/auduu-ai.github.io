@@ -1,0 +1,87 @@
+//Background Cover Mixin
+@mixin bg-cover($size:cover, $position: center center, $repeat: no-repeat){
+    @if $repeat == 'repeat'{
+        background-size: $size;
+        background-position: $position;
+        background-repeat: repeat;
+    } @else if $position == 'top left'{
+        background-size: $size;
+        background-position:top left;
+        background-repeat: $repeat;
+    } @else if $position == 'top center'{
+        background-size: $size;
+        background-position:top center;
+        background-repeat: $repeat;
+    } @else if $position == 'bottom center'{
+        background-size: $size;
+        background-position:bottom center;
+        background-repeat: $repeat;
+    } @else{
+        background-size: $size;
+        background-position: $position;
+        background-repeat: $repeat;
+    }
+}
+
+// BACKGROUND REPEAT
+// @include bg-repeat('#{$url}name.png');
+@mixin bg-repeat($url, $color: transparent, $repeat: repeat) {
+    background: $color url(#{$url}) $repeat;
+}
+
+// BACKGROUND SIZE
+// @include bg-size($size: inherit);
+@mixin bg-size($size: inherit) {
+    -webkit-background-size: $size;
+    -moz-background-size: $size;
+    -o-background-size: $size;
+    background-size: $size;  
+}
+
+
+// BACKGROUND NO-REPEAT
+// @include bg-norepeat('#{$url}name.png', transparent, no-repeat, center center, cover);
+@mixin bg-norepeat($url, $color: transparent, $repeat: no-repeat, $position: center center, $size: cover) {
+    background: $color url(#{$url}) $repeat $position;
+    -webkit-background-size: $size;
+    -moz-background-size: $size;
+    -o-background-size: $size;
+    background-size: $size;  
+}
+
+// BACKGROUND COVER
+// @include cover-bg('name.png');
+@mixin cover-bg($url, $background-top:"center", $background-left:"center") {
+    background: url(#{$url}) no-repeat unquote($background-top) unquote($background-left); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;  
+}
+
+// Background Image Mixin
+// @include bg_image('#{$url}name.png');
+@mixin bg-image($url){
+    background-image: url(#{$url});
+}
+
+//Background color
+// @include bg_image(#fff);
+@mixin bg-color($baseColor){
+    background-color: $baseColor;
+    &:hover{
+        background-color: darken($baseColor, 5%) 
+    }
+}
+
+// BACKGROUND  RGBA & COLOR RGBA + RGBA FALLBACK
+// @include rgba(#333, 0.5, color); & @include rgba(#333, 0.5, bg);
+@mixin rgba($color, $percentage, $type: '') {
+    @if $type == 'color' {
+        color: ($color);
+        color: rgba($color, $percentage);
+    } @else {
+        background-color: ($color);
+        background-color: rgba($color, $percentage);
+    }
+}

@@ -1,0 +1,93 @@
+// MARGIN
+@mixin margin($margin) {
+	@if length($margin) == 1 {
+		margin: $margin+px;
+	}
+	@if length($margin) == 2 {
+		margin: nth($margin, 1)+px nth($margin, 2)+px;
+	}
+	@if length($margin) == 3 {
+		margin: nth($margin, 1)+px nth($margin, 2)+px nth($margin, 3)+px;
+	}
+	@if length($margin) == 4 {
+		margin: nth($margin, 1)+px nth($margin, 2)+px nth($margin, 3)+px nth($margin, 4)+px;
+	}
+}
+@mixin margin-top($margin) {
+	margin-top: $margin+px;
+}
+@mixin margin-right($margin) {
+	margin-right: $margin+px;
+}
+@mixin margin-bottom($margin) {
+	margin-bottom: $margin+px;
+}
+@mixin margin-left($margin) {
+	margin-left: $margin+px;
+}
+@mixin margin-auto($auto:auto) {
+	margin:$auto;
+}
+
+// PADDING
+@mixin padding($padding) {
+	@if length($padding) == 1 {
+		padding: $padding+px;
+	}
+	@if length($padding) == 2 {
+		padding: nth($padding, 1)+px nth($padding, 2)+px;
+	}
+	@if length($padding) == 3 {
+		padding: nth($padding, 1)+px nth($padding, 2)+px nth($padding, 3)+px;
+	}
+	@if length($padding) == 4 {
+		padding: nth($padding, 1)+px nth($padding, 2)+px nth($padding, 3)+px nth($padding, 4)+px;
+	}
+}
+@mixin padding-top($padding) {
+	padding-top: $padding+px;
+}
+@mixin padding-right($padding) {
+	padding-right: $padding+px;
+}
+@mixin padding-bottom($padding) {
+	padding-bottom: $padding+px;
+}
+@mixin padding-left($padding) {
+	padding-left: $padding+px;
+}
+
+// MARGIN & PADDING EXTEND * 5
+@mixin maring-and-padding-spacing( $spacing ) {
+	@for $i from 1 to 20 {
+		// Margin
+		%margin-#{$i}x { margin: $spacing * $i; }
+
+		%margin-top-#{$i}x, 
+		%margin-vertical-#{$i}x { margin-top: $spacing * $i; }
+
+		%margin-bottom-#{$i}x,
+		%margin-vertical-#{$i}x { margin-bottom: $spacing * $i; }
+
+		%margin-left-#{$i}x,
+		%margin-horizontal-#{$i}x { margin-left: $spacing * $i; }
+
+		%margin-right-#{$i}x,
+		%margin-horizontal-#{$i}x { margin-right: $spacing * $i; }
+
+		// Padding
+		%padding-#{$i}x { padding: $spacing * $i; }
+
+		%padding-top-#{$i}x,
+		%padding-vertical-#{$i}x { padding-top: $spacing * $i; }
+
+		%padding-bottom-#{$i}x,
+		%padding-vertical-#{$i}x{ padding-bottom: $spacing * $i; }
+
+		%padding-left-#{$i}x,
+		%padding-horizontal-#{$i}x { padding-left: $spacing * $i; }
+
+		%padding-right-#{$i}x,
+		%padding-horizontal-#{$i}x{ padding-right: $spacing * $i; }
+	}
+}

@@ -1,0 +1,15 @@
+%pseudo {
+  content: '';
+}
+
+// Pseudos Absolute
+%pseudo_a {
+  content: ''; 
+  position: absolute;
+}
+
+// Pseudos Relative
+%pseudo_r {
+  content: ''; 
+  position: relative;
+}

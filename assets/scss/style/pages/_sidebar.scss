@@ -1,0 +1,49 @@
+.side-navigation {
+    width: 280px;
+    background: #2f59c4;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 105px 15px 0 0;
+    ul {
+        li {
+            display: block;
+            a {
+                display: block;
+                padding: 15px 15px 15px 50px;
+                width: 100%;
+                border-radius: 0 30px 30px 0;
+                color: #fff;
+                position: relative;
+                font-family: $font2;
+                i {
+                    width: 24px;
+                    display: inline-block;
+                    position: absolute;
+                    left: 15px;
+                    top: 11px;
+                    img {
+                        width: 100%;
+                    }
+                }
+                &:hover {
+                    background: $theme-secondary;
+                }
+            }
+        }
+    }
+    .logout-btn {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border: 0;
+        background: $theme-secondary;
+        color: #fff;
+        padding: 15px 0;
+        font-size: 16px;
+        font-family: $font2;
+    }
+}
